@@ -16,6 +16,7 @@ def analysis(months=86,
                 Average Change: ${average}
                 Greatest Increase in Profits: Aug-16 ({increase})
                 Greatest Decrease in Profits: Feb-14 ({decrease})"""
+    
     return'\n'.join(ln.strip() for ln in output.split("\n"))
 
 # we have not comparison for the initial month; so we drop it
