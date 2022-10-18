@@ -40,6 +40,8 @@ net_monthly_avg = round(sum(net_change_list)/len(net_change_list),2)
 min_change = min(net_change_list)
 max_change = max(net_change_list)
 
+print(net_change_list)
+
 print("Financial Analysis")
 print("-------------------------")
 print(f"Total Months: ${total_months}")
