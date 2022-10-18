@@ -55,7 +55,7 @@ def csv_to_dict(fpath):
             row["Profit/Losses"] = pl
 
             # add the change to the row/month
-            row["change"] = 0 if idx == 0 else (previous - pl)
+            row["change"] = 0 if idx == 0 else (pl - previous)
             previous = pl
 
             # add the row to the array we will return
