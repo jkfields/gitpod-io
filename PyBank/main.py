@@ -62,6 +62,7 @@ def csv_to_dict(fpath):
             rows.append(row)
 
     return rows
+
             
 def main():
     fpath = "/workspace/gitpod/PyBank/Resources/budget_data.csv"
