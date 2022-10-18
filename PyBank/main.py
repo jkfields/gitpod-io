@@ -19,6 +19,11 @@ def analysis(months=86,
     return'\n'.join(ln.strip() for ln in output.split("\n"))
 
 
+def average_change(data):
+    changes = [ row.get("change") for idx, row in enumerate(data) if idx > 0 ]
+    return  round(sum(changes) / len(changes), 2)
+    
+
 # get the minimum change
 def get_maximum(data):
     return 12346
@@ -44,11 +49,12 @@ def csv_to_dict(fpath):
     with open(fpath, "r") as fh:
         for idx, row in enumerate(csv.DictReader(fh)):
             pl = int(row.get("Profit/Losses"))
+
             # since were processing the row; update str to int
             row["Profit/Losses"] = pl
 
             # add the change to the row/month
-            row["change"] = pl if idx == 0 else previous - pl
+            row["change"] = 0 if idx == 0 else (previous - pl)
             previous = pl
 
             # add the row to the array we will return
@@ -64,7 +70,7 @@ def main():
     total = sum_of_profits(data)
     minimum = get_minimum(data)
     maximum = get_maximum(data)
-    average = round(mean(int(row.get('Profit/Losses')) for row in data) / months, 2)
+    average = average_change(data)
 
     print(analysis(months, total, average, maximum, minimum))
 
