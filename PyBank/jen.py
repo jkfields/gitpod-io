@@ -1,6 +1,7 @@
 import csv
 
 csvpath = "PyBank/Resoucres/budget_data.csv"
+csvpath = "Resources/budget_data.csv"
 
 total_months = 0
 pl_total = 0
