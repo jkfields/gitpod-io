@@ -8,6 +8,7 @@ def analysis(months=86,
              average=-8311.11,
              increase="Aug-16 ($1862002)",
              decrease="Feb-14 ($-1825558)"):
+             
     output = f"""Financial Analysis
                 ----------------------------
                 Total Months: {months}
@@ -20,9 +21,6 @@ def analysis(months=86,
 
 # get the minimum change
 def get_maximum(data):
-     round(mean(int(row.get('Profit/Losses')) for row in
- 
-    print(k)
     return 12346
 
 
