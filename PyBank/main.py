@@ -21,6 +21,7 @@ def analysis(months=86,
 
 def average_change(data):
     changes = [ row.get("change") for idx, row in enumerate(data) if idx > 0 ]
+    print(changes)
     return  round(sum(changes) / len(changes), 2)
     
 
