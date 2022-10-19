@@ -7,7 +7,7 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
 
 def calculate_percentage(numerator, denominator, precision=3):
     """
-    Convert 2 integers to a percentage.
+    Calculate the percentage from 2 integers.
 
     :param numerator: integer
     :param denominator: integer
