@@ -27,7 +27,7 @@ def get_candidates(data):
     """
     Generate a list of candidates found in the data.
 
-   :param data: list, data ingested from csv file.
+   :param data: list representing the data ingested from csv file.
    :raises: None
    :returns: list of candidates identified
    :return type: set
@@ -40,6 +40,14 @@ def get_candidates(data):
 
 # number of votes in the input
 def number_of_votes(data):
+    """
+    Calculate the  number of votes case in the election.
+
+   :param data: list representing the data ingested from csv file.
+   :raises: None
+   :returns: total number of votes 
+   :return type: set
+    """
     return len(data)
 
 
