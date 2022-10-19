@@ -60,8 +60,9 @@ def main():
                         
         percentage = round(float(votes) / total_votes * 100, 3)
         results.append(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
-        output = get_results(total_votes, results, winner)
-        print(output)
+    
+    output = get_results(total_votes, results, winner)
+    print(output)
 
 
 if __name__ == "__main__":
