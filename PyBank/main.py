@@ -84,7 +84,7 @@ def main():
     maximum = get_maximum(data)
     average = average_change(data)
 
-    output = analysis(months, total, average, maximum, minimum))
+    output = analysis(months, total, average, maximum, minimum)
     save_analysis(fpath[1], output)
     print(output)
 
