@@ -18,11 +18,20 @@ def calculate_percentage(numerator, denominator, precision=3):
     """
     try:
         return round(float(numerator) / denominator * 100, precision)
+
     except (ValueError, TypeError, ZeroDivisionError):
         raise
 
 
 def get_candidates(data):
+    """
+    Generate a list of candidates found in the data.
+
+   :param data: list, data ingested from csv file.
+   :raises: None
+   :returns: list of candidates identified
+   :return type: set
+    """
     candidates = [ row.get("Candidate") for row in data ]
 
     # set removes duplicates
