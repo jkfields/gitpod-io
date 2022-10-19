@@ -9,8 +9,8 @@ def analysis(months, total, average, increase, decrease):
                 Total Months: {months}
                 Total: ${total}
                 Average Change: ${average}
-                Greatest Increase in Profits: Aug-16 ({increase})
-                Greatest Decrease in Profits: Feb-14 ({decrease})   
+                Greatest Increase in Profits: {increase}
+                Greatest Decrease in Profits: {decrease}   
               """
 
     """ this is purely due to the indentation of the output string
@@ -28,7 +28,7 @@ def average_change(data):
 # get the minimum change
 def get_maximum(data):
     max_change = max(data, key=lambda row:row.get("change"))
-    return f"{max_change.get('date')} ({max_change.get('change')}"
+    return f"{max_change.get('Date')} ({max_change.get('change')}"
 
 
 def  get_minimum(data):
