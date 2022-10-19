@@ -7,6 +7,8 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
 
 def get_candidates(data):
     candidates = [ row.get("Candidate") for row in data ]
+
+    # set removes duplicates
     return set(candidates)
 
 
@@ -35,7 +37,9 @@ def main():
     print(data[-1])
     print(f"Total ballots cast: {len(data)}")
     print(f"{getsizeof(data)} bytes: {data[0]}")
-    print(get_candidates(data))
+    
+    for candidate in get_candidates(data):
+        print(f"Candidate: {candidate}")
 
     #print(results())
 
