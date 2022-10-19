@@ -33,7 +33,7 @@ def get_maximum(data):
 
 def  get_minimum(data):
     delta = min(data, key=lambda row:row.get("change"))
-    return f"{delta.get('Date')} ({delta.get('change')})
+    return f"{delta.get('Date')} ({delta.get('change')})"
     
 
 # number of months in input; assumes 1 month per line
