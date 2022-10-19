@@ -10,8 +10,7 @@ def analysis(months, total, average, increase, decrease):
                 Total: ${total}
                 Average Change: ${average}
                 Greatest Increase in Profits: Aug-16 ({increase})
-                Greatest Decrease in Profits: Feb-14 ({decrease})
-                
+                Greatest Decrease in Profits: Feb-14 ({decrease})   
               """
 
     """ this is purely due to the indentation of the output string
