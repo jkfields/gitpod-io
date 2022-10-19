@@ -46,7 +46,7 @@ def main():
 
     for candidate in get_candidates(data):
         votes = votes_by_candidate(data, candidate)
-        percentage = round(float(votes) / total_votes, 3)
+        percentage = round(float(votes) / total_votes * 100, 3)
         print(f"{candidate}: {percentage}% ({votes})")
         #Charles Casper Stockham: 23.049% (851213)
     #print(results())
