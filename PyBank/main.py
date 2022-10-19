@@ -16,9 +16,10 @@ def analysis(months=86,
                 Average Change: ${average}
                 Greatest Increase in Profits: Aug-16 ({increase})
                 Greatest Decrease in Profits: Feb-14 ({decrease})"""
-    # this is purely due to the indentation of the output string
-    # format above to remove the indentation which isn't needed 
-    # in the output
+
+    """ this is purely due to the indentation of the output string
+        format above to remove the indentation which isn't needed 
+       in the output """
     return'\n'.join(ln.strip() for ln in output.split("\n"))
 
 
@@ -42,7 +43,7 @@ def  get_minimum(data):
 def number_of_months(data):
     return len(data)
 
-
+# calculate the total profit/loss for all months
 def sum_of_profits(data):
     return sum(row.get("Profit/Losses") for row in data)
 
@@ -52,12 +53,16 @@ def csv_to_dict(fpath):
     rows = []
     with open(fpath, "r") as fh:
         for idx, row in enumerate(csv.DictReader(fh)):
+            # current profit/loss amount; initially a str
             pl = int(row.get("Profit/Losses"))
 
             # since were processing the row; update str to int
             row["Profit/Losses"] = pl
 
-            # add the change to the row/month
+            """add the change to the row/month; if it is the first
+               line of input there is no change to record; set 0,
+               otherwise, value is the previous amount subtracted
+               from the current amount. """
             row["change"] = 0 if idx == 0 else (pl - previous)
             previous = pl
 
