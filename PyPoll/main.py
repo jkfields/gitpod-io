@@ -60,7 +60,7 @@ def main():
         if votes > win:
             winner = candidate
             win = votes
-        elif vote == win:
+        elif votes == win:
             winner = f"TIE: {winner} and  {candidate}"
                         
         percentage = round(float(votes) / total_votes * 100, 3)
