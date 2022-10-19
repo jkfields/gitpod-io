@@ -52,12 +52,28 @@ def number_of_votes(data):
 
 
 def read_csv(fpath):
+    """
+    Ingest the data from the specific csv file.
+
+   :param: fpath, str representing the path to the  csv file.
+   :raises: None
+   :returns: list of dict representing the rows in the file 
+   :return type: list
+    """    
     with open(fpath, "r") as fh:
         data = DictReader(fh)
         return [ ln for ln in data ]
 
 
 def get_results(total_votes, results, winner):
+    """
+    Generate the analysis of the data.
+
+   :param: total_vote integer
+   :raises: None
+   :returns :detailed analysis of the data 
+   :return type: str
+    """
     results = "\n".join(results)
     output = f"""Election Results
                  -------------------------
@@ -72,15 +88,41 @@ def get_results(total_votes, results, winner):
 
              
 def save_analysis(fpath, output):
-    with open(fpath, "w") as fh:
-        fh.write(output)
+    """
+    Save the analysis gerated from the data to file.
+
+    :param: fpath, str representing the path to save.
+    :param: output, multi-line str representing the analysis
+    :raises: IOerror, OSError
+    :returns: boolean representing succes or failure; false  
+    :return type: str
+    """
+    try:
+        with open(fpath, "w") as fh:
+            fh.write(output)
+    except (IOError, OSError):
+        raise
+    else:
+        return True
 
 
 def votes_by_candidate(data, candidate):
-    return len([row.get("BallotId") for row in data if row.get("Candidate") == candidate ])
+    """
+    Calculate the number of votes for the specified candidate.
+
+    :param: data, list representing the data ingested from csv file.
+    :param: candidate, string representing the candidate's name
+    :raises: None
+    :returns: detailed analysis of the data 
+    :return type: str
+    """
+    return len([ row.get("BallotId") for row in data if row.get("Candidate") == candidate ])
 
 
 def main():
+    """
+    drive the action
+    """
     data = read_csv(fpath[0])
     total_votes = number_of_votes(data)
 
