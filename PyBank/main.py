@@ -27,14 +27,15 @@ def average_change(data):
 
 # get the minimum change
 def get_maximum(data):
-    return 12346
+    min_change = min(row.get("change") for row in data)
+    return min_change
 
 
 def  get_minimum(data):
-    #key = min(data, data.get)
-    #return key, data.get(key)
-    return 12
+    max_change = max(row.get("change") for row in data)
+    return max_change
     
+
 # number of months in input; assumes 1 month per line
 def number_of_months(data):
     return len(data)
