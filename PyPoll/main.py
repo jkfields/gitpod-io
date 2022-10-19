@@ -39,11 +39,15 @@ def votes_by_candidate(data, candidate):
 def main():
     data = read_csv(fpath[0])
     print(data[-1])
-    print(f"Total ballots cast: {len(data)}")
+
+    total_votes = len(data)
+    print(f"Total ballots cast: {total_votes}")
     print(f"{getsizeof(data)} bytes: {data[0]}")
 
     for candidate in get_candidates(data):
-        print(f"{candidate}: {percentage} ({votes_by_candidate(data, candidate)})")
+        votes = votes_by_candidate(data, candidate)
+        percentage = round(float(votes) / total_votes, 2)
+        print(f"{candidate}: {percentage} ({votes})")
         #Charles Casper Stockham: 23.049% (851213)
     #print(results())
 
