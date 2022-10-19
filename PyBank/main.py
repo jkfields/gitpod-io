@@ -32,7 +32,7 @@ def get_maximum(data):
 
 
 def  get_minimum(data):
-     delta = min(data, key=lambda row:row.get("change"))
+    delta = min(data, key=lambda row:row.get("change"))
     return f"{delta.get('Date')} ({delta.get('change')})
     
 
