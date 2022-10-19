@@ -6,6 +6,7 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
         )
 
 def get_candidates(data):
+    candidates = []
     candidates = [ c.get("Candidate") for c in candidates if c.get("Candidate") not in candidates ]
     return candidates
 
