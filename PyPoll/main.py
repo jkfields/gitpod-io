@@ -18,24 +18,21 @@ def get_candidates(data):
     # set removes duplicates
     return set(candidates)
 
-
 def read_csv(fpath):
     with open(fpath, "r") as fh:
         data = DictReader(fh)
         return [ ln for ln in data ]
 
 
-def results():
-    output = """Election Results
-                -------------------------
-                Total Votes: 369711
-                -------------------------
-                Charles Casper Stockham: 23.049% (85213)
-                Diana DeGette: 73.812% (272892)
-                Raymon Anthony Doane: 3.139% (11606)
-                -------------------------
-                Winner: Diana DeGette
-                -------------------------"""
+def get_results(total_votes, results, winner):
+    output = f"""Election Results
+                 -------------------------
+                 Total Votes: {total_votes}
+                 -------------------------
+                 {'\n'.join(results)}
+                 -------------------------
+                 Winner: {winner}
+                 -------------------------"""
 
     return "\n".join([ ln.strip() for ln in output.split("\n") ])
 
@@ -52,12 +49,22 @@ def main():
     print(f"Total ballots cast: {total_votes}")
     print(f"{getsizeof(data)} bytes: {data[0]}")
 
+    win = 0
+    results = []
+
     for candidate in get_candidates(data):
         votes = votes_by_candidate(data, candidate)
+        
+        # who is he winner?
+        if votes > win:
+            winner = candidate
+            win = votes
+        elif vote == win:
+            winner = f"TIE: {winner} and  {candidate}"
+                        
         percentage = round(float(votes) / total_votes * 100, 3)
-        print(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
-        #Charles Casper Stockham: 23.049% (851213)
-    #print(results())
+        results.append(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
+        output = get_results(total_votes, results, winner)
 
 
 if __name__ == "__main__":
