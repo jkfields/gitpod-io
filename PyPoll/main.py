@@ -8,7 +8,7 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
 def calculate_percentage(numerator, denominator, precision=3):
     try:
         return round(float(numerator) / denominator * 100, precision)
-    except ValueError, TypeError, ZeroDivisionError:
+    except (ValueError, TypeError, ZeroDivisionError):
         raise
 
 
