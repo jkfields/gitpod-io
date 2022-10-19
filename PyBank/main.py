@@ -2,13 +2,8 @@ import csv
 from statistics import mean
 import sys
 
-
-def analysis(months=86,
-             total=22564198,
-             average=-8311.11,
-             increase="Aug-16 ($1862002)",
-             decrease="Feb-14 ($-1825558)"):
-             
+# generate the analysis
+def analysis(months, total, average, increase, decrease):
     output = f"""Financial Analysis
                 ----------------------------
                 Total Months: {months}
@@ -20,7 +15,7 @@ def analysis(months=86,
     """ this is purely due to the indentation of the output string
         format above to remove the indentation which isn't needed 
        in the output """
-    return'\n'.join(ln.strip() for ln in output.split("\n"))
+    return '\n'.join(ln.strip() for ln in output.split("\n"))
 
 
 # we have not comparison for the initial month; so we drop it
@@ -72,9 +67,16 @@ def csv_to_dict(fpath):
     return rows
 
              
+def save_analysis(fpath, output):
+    with open(fpath, "w") as fh:
+        fh.write(output)
+
+
 def main():
-    fpath = "/workspace/gitpod/PyBank/Resources/budget_data.csv"
-    data = csv_to_dict(fpath)
+    fpath = ("/workspace/gitpod/PyBank/Resources/budget_data.csv", 
+             "/workspace/gitpod/PyBank/analysis/pybank_analysis.txt")
+
+    data = csv_to_dict(fpath[0])
   
     months = number_of_months(data)
     total = sum_of_profits(data)
@@ -82,7 +84,9 @@ def main():
     maximum = get_maximum(data)
     average = average_change(data)
 
-    print(analysis(months, total, average, maximum, minimum))
+    output = analysis(months, total, average, maximum, minimum))
+    save_analysis(fpath[1], output)
+    print(output)
 
 
 if __name__ == "__main__":
