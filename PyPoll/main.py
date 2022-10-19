@@ -6,7 +6,8 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
 
 
 def main():
-    print(f"{fpath}")
+    with open(fpath[0], "r") as ifh:
+        print(ifh[-1])
 
 
 if __name__ == "__main__":
