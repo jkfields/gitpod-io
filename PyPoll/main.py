@@ -1,5 +1,4 @@
 from csv import DictReader
-from sys import getsizeof
 
 fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
@@ -37,6 +36,11 @@ def get_results(total_votes, results, winner):
 
     return "\n".join([ ln.strip() for ln in output.split("\n") ])
 
+             
+def save_analysis(fpath, output):
+    with open(fpath, "w") as fh:
+        fh.write(output)
+
 
 def votes_by_candidate(data, candidate):
     return len([row.get("BallotId") for row in data if row.get("Candidate") == candidate ])
@@ -63,6 +67,7 @@ def main():
     
     output = get_results(total_votes, results, winner)
     print(output)
+    save_analysis(fpath[1], output)
 
 
 if __name__ == "__main__":
