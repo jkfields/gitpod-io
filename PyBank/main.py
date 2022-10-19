@@ -15,7 +15,7 @@ def analysis(months, total, average, increase, decrease):
 
     """ this is purely due to the indentation of the output string
         format above to remove the indentation which isn't needed 
-       in the output """
+       in the displayed and file output """
     return '\n'.join(ln.strip() for ln in output.split("\n"))
 
 
