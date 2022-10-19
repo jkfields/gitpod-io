@@ -32,15 +32,19 @@ def results():
     return "\n".join([ ln.strip() for ln in output.split("\n") ])
 
 
+def votes_by_candidate(data, candidate):
+    return len([row.tet("BallotId") for row in data if row.get("Candidate") == candidate ])
+
+
 def main():
     data = read_csv(fpath[0])
     print(data[-1])
     print(f"Total ballots cast: {len(data)}")
     print(f"{getsizeof(data)} bytes: {data[0]}")
-    
-    for candidate in get_candidates(data):
-        print(f"Candidate: {candidate}")
 
+    for candidate in get_candidates(data):
+        print(f"{candidate}: {percentage} ({votes_by_candidate(data, candidate)})")
+        #Charles Casper Stockham: 23.049% (851213)
     #print(results())
 
 
