@@ -82,9 +82,9 @@ def main():
   
     months = number_of_months(data)
     total = sum_of_profits(data)
+    average = average_change(data)
     minimum = get_minimum(data)
     maximum = get_maximum(data)
-    average = average_change(data)
 
     output = analysis(months, total, average, maximum, minimum)
     save_analysis(fpath[1], output)
