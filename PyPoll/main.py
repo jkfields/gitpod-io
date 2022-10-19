@@ -8,7 +8,7 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
 def get_candidates(data):
     candidates = []
     candidates = [ row.get("Candidate") for row in data if row.get("Candidate") not in candidates ]
-    return candidates
+    return set(candidates)
 
 
 def read_csv(fpath):
