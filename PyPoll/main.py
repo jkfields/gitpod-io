@@ -44,15 +44,10 @@ def votes_by_candidate(data, candidate):
 
 def main():
     data = read_csv(fpath[0])
-    print(data[-1])
-
     total_votes = len(data)
-    print(f"Total ballots cast: {total_votes}")
-    print(f"{getsizeof(data)} bytes: {data[0]}")
 
     win = 0
     results = []
-
     for candidate in get_candidates(data):
         votes = votes_by_candidate(data, candidate)
         
@@ -66,6 +61,7 @@ def main():
         percentage = round(float(votes) / total_votes * 100, 3)
         results.append(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
         output = get_results(total_votes, results, winner)
+        print(output)
 
 
 if __name__ == "__main__":
