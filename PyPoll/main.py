@@ -4,7 +4,18 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
         )
 
+
 def calculate_percentage(numerator, denominator, precision=3):
+    """
+    Convert 2 integers to a percentage.
+
+    :param numerator: integer
+    :param denominator: integer
+    :param precision: integer specifying the number of decimal places; default=3
+    :raises: ValueError, TypeError, ZeroDivisionError
+    :returns: percentage to as many as 3 decimal places
+    :return type: float
+    """
     try:
         return round(float(numerator) / denominator * 100, precision)
     except (ValueError, TypeError, ZeroDivisionError):
