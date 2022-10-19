@@ -1,4 +1,5 @@
 from csv import DictReader
+from sys import getsizeof
 
 fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
@@ -29,6 +30,7 @@ def main():
     data = read_csv(fpath[0])
     print(data[-1])
     print(f"Total ballots cast: {len(data)}")
+    print(f"{getsizeof(data)} bytes: {data[0]}")
 
     print(results())
 
