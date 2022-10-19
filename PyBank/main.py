@@ -27,13 +27,13 @@ def average_change(data):
 
 # get the minimum change
 def get_maximum(data):
-    max_change = max(data, key=lambda row:row.get("change"))
-    return f"{max_change.get('Date')} ({max_change.get('change')}"
+    delta = max(data, key=lambda row:row.get("change"))
+    return f"{delta.get('Date')} ({delta.get('change')})"
 
 
 def  get_minimum(data):
-    max_change = max(row.get("change") for row in data)
-    return max_change
+     delta = min(data, key=lambda row:row.get("change"))
+    return f"{delta.get('Date')} ({delta.get('change'
     
 
 # number of months in input; assumes 1 month per line
