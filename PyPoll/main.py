@@ -1,13 +1,17 @@
-import csv
+from csv import DictReader
 
 fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
         )
 
+def read_csv(fpath):
+    with open(fpath, "r") as fh:
+        data = DictReader(fh)
+        return [ ln for ln in data ]
 
 def main():
-    with open(fpath[0], "r") as ifh:
-        print(ifh.readlines()[-1])
+    data = read_csv(fpath[0])
+    print(data[-1])
 
 
 if __name__ == "__main__":
