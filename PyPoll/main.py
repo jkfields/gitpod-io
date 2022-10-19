@@ -29,7 +29,7 @@ def get_results(total_votes, results, winner):
                  -------------------------
                  Total Votes: {total_votes}
                  -------------------------
-                 {'\n'.join(results)}
+                 {"\n".join(results)}
                  -------------------------
                  Winner: {winner}
                  -------------------------"""
