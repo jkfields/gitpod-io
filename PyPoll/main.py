@@ -33,7 +33,7 @@ def results():
 
 
 def votes_by_candidate(data, candidate):
-    return len([row.tet("BallotId") for row in data if row.get("Candidate") == candidate ])
+    return len([row.get("BallotId") for row in data if row.get("Candidate") == candidate ])
 
 
 def main():
@@ -46,8 +46,8 @@ def main():
 
     for candidate in get_candidates(data):
         votes = votes_by_candidate(data, candidate)
-        percentage = round(float(votes) / total_votes, 2)
-        print(f"{candidate}: {percentage} ({votes})")
+        percentage = round(float(votes) / total_votes, 3)
+        print(f"{candidate}: {percentage}% ({votes})")
         #Charles Casper Stockham: 23.049% (851213)
     #print(results())
 
