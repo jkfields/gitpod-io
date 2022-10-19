@@ -5,11 +5,15 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
         )
 
+def get_candidates(data):
+    candidates = [ c.get("Candidate") for c in candidates if c.get("Candidate") not in candidates ]
+    return candidates
+
+
 def read_csv(fpath):
     with open(fpath, "r") as fh:
         data = DictReader(fh)
         return [ ln for ln in data ]
-
 
 def results():
     output = """Election Results
@@ -31,8 +35,9 @@ def main():
     print(data[-1])
     print(f"Total ballots cast: {len(data)}")
     print(f"{getsizeof(data)} bytes: {data[0]}")
+    print(get_candidates(data))
 
-    print(results())
+    #print(results())
 
 
 if __name__ == "__main__":
