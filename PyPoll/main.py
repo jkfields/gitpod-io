@@ -5,6 +5,13 @@ fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
         )
 
+def calculate_percentage(numerator, denominator, precision=3):
+    try:
+        return= round(float(numerator) / denominator * 100, precision)
+    except ValueError, TypeError, ZeroDivisionError:
+        raise
+
+
 def get_candidates(data):
     candidates = [ row.get("Candidate") for row in data ]
 
@@ -16,6 +23,7 @@ def read_csv(fpath):
     with open(fpath, "r") as fh:
         data = DictReader(fh)
         return [ ln for ln in data ]
+
 
 def results():
     output = """Election Results
@@ -47,7 +55,7 @@ def main():
     for candidate in get_candidates(data):
         votes = votes_by_candidate(data, candidate)
         percentage = round(float(votes) / total_votes * 100, 3)
-        print(f"{candidate}: {percentage}% ({votes})")
+        print(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
         #Charles Casper Stockham: 23.049% (851213)
     #print(results())
 
