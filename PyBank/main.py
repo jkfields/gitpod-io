@@ -27,7 +27,7 @@ def average_change(data):
 
 # get the minimum change
 def get_maximum(data):
-    min_change = min(row.get("change") for row in data)
+    min_change = min(data, lambda row:row.get("change"))
     return min_change
 
 
