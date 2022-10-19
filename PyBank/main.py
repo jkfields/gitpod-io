@@ -40,6 +40,7 @@ def  get_minimum(data):
 def number_of_months(data):
     return len(data)
 
+
 # calculate the total profit/loss for all months
 def sum_of_profits(data):
     return sum(row.get("Profit/Losses") for row in data)
