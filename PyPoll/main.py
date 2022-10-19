@@ -25,11 +25,12 @@ def read_csv(fpath):
 
 
 def get_results(total_votes, results, winner):
+    results = "\n".join(results)
     output = f"""Election Results
                  -------------------------
                  Total Votes: {total_votes}
                  -------------------------
-                 {"\n".join(results)}
+                 {results}
                  -------------------------
                  Winner: {winner}
                  -------------------------"""
