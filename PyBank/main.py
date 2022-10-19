@@ -19,7 +19,7 @@ def analysis(months, total, average, increase, decrease):
     return '\n'.join(ln.strip() for ln in output.split("\n"))
 
 
-# we have not comparison for the initial month; so we drop it
+# we have no comparison for the initial month; so we drop it
 def average_change(data):
     changes = [ row.get("change") for idx, row in enumerate(data) if idx > 0 ]
     return  round(sum(changes) / len(changes), 2)
