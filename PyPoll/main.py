@@ -17,6 +17,12 @@ def get_candidates(data):
     # set removes duplicates
     return set(candidates)
 
+
+# number of votes in the input
+def number_of_votes(data):
+    return len(data)
+
+
 def read_csv(fpath):
     with open(fpath, "r") as fh:
         data = DictReader(fh)
@@ -48,7 +54,7 @@ def votes_by_candidate(data, candidate):
 
 def main():
     data = read_csv(fpath[0])
-    total_votes = len(data)
+    total_votes = number_of_votes(data)
 
     win = 0
     results = []
