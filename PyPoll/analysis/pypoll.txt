@@ -1,0 +1,12 @@
+
+  ```text
+  Election Results
+  ----------------------------
+  Total Votes: 369711
+  ----------------------------
+  <generator object <genexpr> at 0x7f178ea7ccf0>
+  -------------------------
+  Winner: Diana DeGette
+  -------------------------
+  ```
+

@@ -1,4 +1,5 @@
 from csv import reader
+from os import linesep
 
 csvpath = "PyPoll/Resources/election_data.csv"
 csvpath = "Resources/election_data.csv"
@@ -33,7 +34,7 @@ output = f"""
   ----------------------------
   Total Votes: {num_rows}
   ----------------------------
-  {row for row in results}
+  {linesep.join([row for row in results]}
   -------------------------
   Winner: {winner}
   -------------------------
