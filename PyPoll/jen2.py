@@ -2,6 +2,10 @@ from csv import reader
 from os import linesep
 
 csvpath = "PyPoll/Resources/election_data.csv"
+
+# my path; to use yours main.py must be executed
+# from outsite PyPoll; you can just get rid of these
+# 4 lines
 csvpath = "Resources/election_data.csv"
 
 num_rows = 0
