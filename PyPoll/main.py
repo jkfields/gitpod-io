@@ -76,16 +76,19 @@ def get_results(total_votes, results, winner):
     """
     results = "\n".join(results)
     output = f"""Election Results
+                 ```text
                  -------------------------
                  Total Votes: {total_votes}
                  -------------------------
                  {results}
                  -------------------------
                  Winner: {winner}
-                 -------------------------"""
+                 -------------------------
+                 ```
+                 """
 
-    return "\n".join([ ln.strip() for ln in output.split("\n") ])
-
+    #return "\n".join([ ln.strip() for ln in output.split("\n") ])
+    return output
              
 def save_analysis(fpath, output):
     """
