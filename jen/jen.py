@@ -38,16 +38,16 @@ with open(csvpath, "r") as csvfile:
         if total_months > 0:
            net_change = pl - previous_net
            net_total += net_change
+          
+           if net_change < min_change:
+               min_change = net_change
+               min_month = row[0]
+        
+           if net_change > max_change:
+               max_change = net_change
+               max_month = row[0]
 
         previous_net = pl
-
-        if net_change < min_change:
-            min_change = net_change
-            min_month = row[0]
-        
-        if net_change > max_change:
-            max_change = net_change
-            max_month = row[0]
 
         # count the rows
         total_months += 1 
