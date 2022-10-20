@@ -26,11 +26,11 @@ def calculate_percentage(numerator, denominator, precision=3):
 def get_candidates(data):
     """
     Generate a list of candidates found in the data.
-
-   :param data: list representing the data ingested from csv file.
-   :raises: None
-   :returns: list of candidates identified
-   :return type: set
+    
+    :param data: list representing the data ingested from csv file.
+    :raises: None
+    :returns: list of candidates identified
+    :return type: set
     """
     candidates = [ row.get("Candidate") for row in data ]
 
