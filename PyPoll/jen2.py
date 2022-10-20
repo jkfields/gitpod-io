@@ -23,7 +23,7 @@ with open(csvpath, encoding='utf-8') as csvfile:
 
 results = []
 for candidate in votes.keys():
-    results.append(f"{candidate}: {round(100 * votes[candidate] / rows, 3)}% ({votes[candidate]})")
+    results.append(f"{candidate}: {round(100 * votes[candidate] /num_rows, 3)}% ({votes[candidate]})")
 
 winner = max(votes, key=votes.get)
 
