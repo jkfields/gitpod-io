@@ -34,7 +34,7 @@ output = f"""
   ----------------------------
   Total Votes: {num_rows}
   ----------------------------
-  {linesep.join([row for row in results])}
+  {linesep.join([results)}
   -------------------------
   Winner: {winner}
   -------------------------
