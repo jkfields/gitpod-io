@@ -1,4 +1,5 @@
 from csv import DictReader
+from os import linesep
 
 fpath = ( "/workspace/gitpod/PyPoll/Resources/election_data.csv",
           "/workspace/gitpod/PyPoll/analysis/pypoll_analysis.txt"
@@ -73,7 +74,9 @@ def get_results(total_votes, results, winner):
     """
     Generate the analysis of the data.
 
-    :param: total_vote integer
+    :param: total_votes, number of votes cast
+    :param: results, list of results by candidate
+    :param: winner, str containing winner's name
     :raises: None
     :returns :detailed analysis of the data 
     :return type: str
@@ -84,7 +87,7 @@ def get_results(total_votes, results, winner):
         -------------------------
         Total Votes: {total_votes}
         -------------------------
-        {results}
+        {linesep.join(result for result in results])}
         -------------------------
         Winner: {winner}
         -------------------------
