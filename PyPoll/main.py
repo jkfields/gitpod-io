@@ -124,7 +124,7 @@ def votes_by_candidate(data, candidate):
     :returns: detailed analysis of the data 
     :return type: str
     """
-    return len([ row.get("BallotId") for row in data if row.get("Candidate") == candidate ])
+    return len([ row for row in data if row.get("Candidate") == candidate ])
 
 
 def main():
