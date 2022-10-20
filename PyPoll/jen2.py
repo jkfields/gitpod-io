@@ -1,6 +1,7 @@
 from csv import reader
 
 csvpath = "PyPoll/Resources/election_data.csv"
+csvpath = "Resources/election_data.csv"
 
 num_rows = 0
 
