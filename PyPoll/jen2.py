@@ -42,7 +42,7 @@ output = f"""
 """
 
 # supposed to go in the analysis folder per assignment setup
-with ("analysis/pypoll.txt", "w") as fh:
+with open("analysis/pypoll.txt", "w") as fh:
     fh.write(output)
 
 print(output)
