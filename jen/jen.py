@@ -31,16 +31,13 @@ with open(csvpath, "r") as csvfile:
     max_month = ""
     
     for row in csvreader:
-      # count the rows
-        total_months += 1
-
-        #
         pl = int(row[1])
         pl_total += pl
  
         # track the average change
-        net_change = pl - previous_net
-        net_total += net_change
+       if total_montsh > 0:
+           net_change = pl - previous_net
+           net_total += net_change
 
         previous_net = pl
 
@@ -51,8 +48,11 @@ with open(csvpath, "r") as csvfile:
         if net_change > max_change:
             max_change = net_change
             max_month = row[0]
-            
-net_monthly_avg = round(net_total / (total_months), 2)
+
+        # count the rows
+        total_months += 1 
+
+net_monthly_avg = round(net_total / (total_months - 1), 2)
 
 
 """
