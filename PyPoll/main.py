@@ -76,6 +76,7 @@ def get_results(total_votes, results, winner):
     """
     results = "\n".join(results)
     output = f"""
+                ```text
                  Election Results
                  -------------------------
                  Total Votes: {total_votes}
