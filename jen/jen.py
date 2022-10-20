@@ -6,6 +6,7 @@ csvpath = "Resources/budget_data.csv"
 total_months = 0
 pl_total = 0
 net_total = 0
+previous_net = 0
 
 high_change = 0
 high_month = ""
