@@ -26,9 +26,14 @@ with open(csvpath, encoding='utf-8') as csvfile:
         else:
             votes[candidate] = 1
 
+# string of results for each candidate
 results = []
-for candidate in votes.keys():
-    results.append(f"{candidate}: {round(100 * votes[candidate] /num_rows, 3)}% ({votes[candidate]})")
+
+# calculate percentage and results for each candidate
+for candidate in votes:
+    # pull this out of the string so that the algorithm is easily read
+    percentage = round(100 * votes[candidate] /num_rows, 3)
+    results.append(f"{candidate}: {percentage}% ({votes[candidate]})")
 
 winner = max(votes, key=votes.get)
 
