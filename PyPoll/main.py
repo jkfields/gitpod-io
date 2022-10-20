@@ -43,10 +43,10 @@ def number_of_votes(data):
     """
     Calculate the  number of votes case in the election.
 
-   :param data: list representing the data ingested from csv file.
-   :raises: None
-   :returns: total number of votes 
-   :return type: set
+    :param data: list representing the data ingested from csv file.
+    :raises: None
+    :returns: total number of votes 
+    :return type: set
     """
     return len(data)
 
@@ -55,10 +55,10 @@ def read_csv(fpath):
     """
     Ingest the data from the specific csv file.
 
-   :param: fpath, str representing the path to the  csv file.
-   :raises: IOError, OSError
-   :returns: list of dict representing the rows in the file 
-   :return type: list
+    :param: fpath, str representing the path to the  csv file.
+    :raises: IOError, OSError
+    :returns: list of dict representing the rows in the file 
+    :return type: list
     """    
     try:
         with open(fpath, "r") as fh:
@@ -74,24 +74,22 @@ def get_results(total_votes, results, winner):
     """
     Generate the analysis of the data.
 
-   :param: total_vote integer
-   :raises: None
-   :returns :detailed analysis of the data 
-   :return type: str
+    :param: total_vote integer
+    :raises: None
+    :returns :detailed analysis of the data 
+    :return type: str
     """
     results = "\n".join(results)
     output = f"""
-                ```text
-                 Election Results
-                 -------------------------
-                 Total Votes: {total_votes}
-                 -------------------------
-                 {results}
-                 -------------------------
-                 Winner: {winner}
-                 -------------------------
-                 ```
-            """
+        Election Results
+        -------------------------
+        Total Votes: {total_votes}
+        -------------------------
+        {results}
+        -------------------------
+        Winner: {winner}
+        -------------------------
+        """
 
     #return "\n".join([ ln.strip() for ln in output.split("\n") ])
     return output
