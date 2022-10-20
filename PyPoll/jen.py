@@ -1,6 +1,6 @@
 import csv
 
-csvpath = "Resoucres/election_data.csv"
+csvpath = "Resources/election_data.csv"
 
 rows = 0
 #dict
