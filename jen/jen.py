@@ -52,7 +52,7 @@ with open(csvpath, "r") as csvfile:
             max_change = net_change
             max_month = row[0]
             
-net_monthly_avg = round(net_total / (total_months - 1), 2)
+net_monthly_avg = round(net_total / (total_months), 2)
 
 
 """
