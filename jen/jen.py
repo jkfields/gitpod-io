@@ -1,6 +1,9 @@
 import csv
 
+# always double check the setup; your path is misspelled
 csvpath = "PyBank/Resoucres/budget_data.csv"
+
+# my patch; remove
 csvpath = "Resources/budget_data.csv"
 
 total_months = 0
@@ -31,21 +34,27 @@ with open(csvpath, "r") as csvfile:
     max_month = ""
     
     for row in csvreader:
+        # convert to int once into a variable instead of
+        # converting multiple times
         pl = int(row[1])
+        
         pl_total += pl
  
-        # track the average change
+        # track the average change; but skip the
+        # first month as there is no previous_net
         if total_months > 0:
-           net_change = pl - previous_net
-           net_total += net_change
-          
-           if net_change < min_change:
-               min_change = net_change
-               min_month = row[0]
+            net_change = pl - previous_net
+            net_total += net_change
         
-           if net_change > max_change:
-               max_change = net_change
-               max_month = row[0]
+            # track the min change; grab the month
+            if net_change < min_change:
+                min_change = net_change
+                min_month = row[0]
+        
+            # track the max change; grab the month
+            if net_change > max_change:
+                max_change = net_change
+                max_month = row[0]
 
         previous_net = pl
 
@@ -53,18 +62,6 @@ with open(csvpath, "r") as csvfile:
         total_months += 1 
 
 net_monthly_avg = round(net_total / (total_months - 1), 2)
-
-
-"""
-print("Financial Analysis")
-print("-------------------------")
-print(f"Total Months: ${total_months}")
-print(f"Total: {pl_total}")
-print(f"Average Change: ${net_monthly_avg}")
-print(f"Greatest Increase in Profits: ${max_change}")
-print(f"Greatest Decrease in Profits: ${min_change}")
-print("---")
-"""
 
 output = f"""
 Financial Analysis
@@ -76,7 +73,11 @@ Greatest Increase in Profits: {max_month} (${max_change})
 Greatest Decrease in Profits: {min_month} (${min_change})
 """
 
-fpath = "pybank.txt"
+fpath = "Pybank/analysis/pybank.txt"
+
+# my  path; remove
+fpath = "analysis/pybank.txt"
+
 with open(fpath, "w") as analysis:
     analysis.write(output)
 
