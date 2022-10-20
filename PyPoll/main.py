@@ -63,11 +63,10 @@ def read_csv(fpath):
     try:
         with open(fpath, "r") as fh:
             data = DictReader(fh)
+            return [ ln for ln in data ]
 
     except (IOError, OSError):
         raise
-    else:
-        return [ ln for ln in data ]
 
 
 def get_results(total_votes, results, winner):
