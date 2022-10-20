@@ -81,13 +81,12 @@ def get_results(total_votes, results, winner):
     :returns :detailed analysis of the data 
     :return type: str
     """
-    results = "\n".join(results)
     output = f"""
         Election Results
         -------------------------
         Total Votes: {total_votes}
         -------------------------
-        {linesep.join(result for result in results])}
+        {linesep.join(results)}
         -------------------------
         Winner: {winner}
         -------------------------
