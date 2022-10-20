@@ -56,12 +56,17 @@ def read_csv(fpath):
     Ingest the data from the specific csv file.
 
    :param: fpath, str representing the path to the  csv file.
-   :raises: None
+   :raises: IOError, OSError
    :returns: list of dict representing the rows in the file 
    :return type: list
     """    
-    with open(fpath, "r") as fh:
-        data = DictReader(fh)
+    try:
+        with open(fpath, "r") as fh:
+            data = DictReader(fh)
+
+    except (IOError, OSError):
+        raise
+    else:
         return [ ln for ln in data ]
 
 
@@ -104,8 +109,10 @@ def save_analysis(fpath, output):
     try:
         with open(fpath, "w") as fh:
             fh.write(output)
+
     except (IOError, OSError):
         raise
+
     else:
         return True
 
