@@ -5,41 +5,56 @@ csvpath = "Resources/budget_data.csv"
 
 total_months = 0
 pl_total = 0
-net_change_list = []
+net_total = 0
+
+high_change = 0
+high_month = ""
+
+low_change = 0
+low_month =""
 
 with open(csvpath, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    csv_header = next(csvreader)
+    
+    # don't need this in a variable unless you're gonna use it
+    next(csvreader)
 
-    #grabbing the first row of data
-    csv_first = next(csvreader)
-    previous_net = int(csv_first[1])
-    pl_total = int(csv_first[1])
-
-    #print(f"CSV Header: {csv_header}")
-    #x = csv_header[1]
-    # print(x)
+    total_months = 0
+    pl_total = 0
+    net_total = 0
+    
+    min_change = 0
+    min_month = ""
+    
+    max_change = 0
+    max_month = ""
+    
     for row in csvreader:
-        # count the rows
+      # count the rows
         total_months += 1
-        # sum the rows in column 2
-        pl_total += int(row[1])
+
+        #
+        pl = int(row[1])
+        pl_total += pl
  
         # track the average change
-        net_change = int(row[1])-previous_net
-        net_change_list += [net_change]
+        net_change = pl - previous_net
+        net_total += net_change
 
-        previous_net = int(row[1])
-        # subtract row from previous row
+        previous_net = pl
 
-        # sum differences
+        if net_change < min_change:
+            min_change = net_change
+            min_month = row[0]
+        
+        if net_change > max_change:
+            max_change = net_change
+            max_month = row[0]
+            
+net_monthly_avg = round(net_total / (total_months - 1), 2)
 
-        # divide by iterations
 
-net_monthly_avg = round(sum(net_change_list)/len(net_change_list),2)
-min_change = min(net_change_list)
-max_change = max(net_change_list)
-
+"""
 print("Financial Analysis")
 print("-------------------------")
 print(f"Total Months: ${total_months}")
@@ -48,19 +63,20 @@ print(f"Average Change: ${net_monthly_avg}")
 print(f"Greatest Increase in Profits: ${max_change}")
 print(f"Greatest Decrease in Profits: ${min_change}")
 print("---")
-
-output = f"""
-  ```text
-  Financial Analysis
-  ----------------------------
-  Total Months: {total_months}
-  Total: ${pl_total}
-  Average Change: ${net_monthly_avg}
-  Greatest Increase in Profits: Aug-16 (${max_change})
-  Greatest Decrease in Profits: Feb-14 ($-{min_change})
-  ```
 """
 
-file = open("pybank.txt", "w")
-file.write(output)
-file.close()
+output = f"""
+Financial Analysis
+----------------------------
+Total Months: {total_months}
+Total: ${pl_total}
+Average Change: ${net_monthly_avg}
+Greatest Increase in Profits: {max_month} (${max_change})
+Greatest Decrease in Profits: {min_month} (${min_change})
+"""
+
+fpath = "pybank.txt"
+with open(fpath, "w") as analysis:
+    analysis.write(output)
+
+print(output)
