@@ -31,7 +31,7 @@ output = f"""
   ```text
   Election Results
   ----------------------------
-  Total Votes: {rows}
+  Total Votes: {num_rows}
   ----------------------------
   {row for row in results}
   -------------------------
