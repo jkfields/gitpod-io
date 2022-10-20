@@ -75,8 +75,8 @@ def get_results(total_votes, results, winner):
    :return type: str
     """
     results = "\n".join(results)
-    output = f"""Election Results
-                 ```text
+    output = f"""
+                 Election Results
                  -------------------------
                  Total Votes: {total_votes}
                  -------------------------
@@ -85,7 +85,7 @@ def get_results(total_votes, results, winner):
                  Winner: {winner}
                  -------------------------
                  ```
-                 """
+            """
 
     #return "\n".join([ ln.strip() for ln in output.split("\n") ])
     return output
