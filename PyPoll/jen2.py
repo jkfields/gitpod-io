@@ -29,17 +29,14 @@ for candidate in votes.keys():
 winner = max(votes, key=votes.get)
 
 output = f"""
-  ```text
-  Election Results
-  ----------------------------
-  Total Votes: {num_rows}
-  ----------------------------
-  {linesep.join(results)}
-  -------------------------
-  Winner: {winner}
-  -------------------------
-  ```
-
+Election Results
+----------------------------
+Total Votes: {num_rows}
+----------------------------
+{linesep.join(results)}
+-------------------------
+Winner: {winner}
+-------------------------
 """
 
 # supposed to go in the analysis folder per assignment setup
