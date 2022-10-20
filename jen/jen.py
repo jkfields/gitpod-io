@@ -35,7 +35,7 @@ with open(csvpath, "r") as csvfile:
         pl_total += pl
  
         # track the average change
-       if total_montsh > 0:
+       if total_months > 0:
            net_change = pl - previous_net
            net_total += net_change
 
