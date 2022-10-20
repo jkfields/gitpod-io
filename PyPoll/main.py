@@ -144,7 +144,7 @@ def main():
             winner = candidate
             win = votes
         elif votes == win:
-            winner = f"TIE: {winner} and  {candidate}"
+            winner = f"{winner} and  {candidate} are tied!"
                         
         percentage = round(float(votes) / total_votes * 100, 3)
         results.append(f"{candidate}: {calculate_percentage(votes, total_votes)}% ({votes})")
