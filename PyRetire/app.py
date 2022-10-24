@@ -1,5 +1,8 @@
 from datetime import date, datetime, timedelta
 
+key = "e688e99b-4a2c-4474-b4ba-9aa02ff50dfe"
+url = "https://holidayapi.com/v1/holidays?pretty&key=e688e99b-4a2c-4474-b4ba-9aa02ff50dfe&country=US&year=2021"
+
 holidays = [ date(2022, 10, 10),
              date(2022, 11, 11),
              date(2022, 11, 24),
