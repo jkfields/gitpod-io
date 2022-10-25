@@ -44,7 +44,6 @@ time_off = [ date(2022, 9, 21),
              date(2023, 3, 28),
            ]
 
-
 def get_date():
     while True:
         dt = input("Retirement date (yyyy-mm-dd): ").strip()
@@ -81,6 +80,10 @@ def main():
 
     print(now, retire)
     print(type(now), type(retire))
+
+    holidays  =USFederalHolidayCalendar(start=now.strftime("%Y-%m-%d"),
+                                        end=retire.strftime("%Y-%m-%d"))
+    print(holidays)
 
     #for day in list_of_days(now, retire):
     #    print(day)
