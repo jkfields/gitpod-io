@@ -81,10 +81,9 @@ def main():
     print(now, retire)
     print(type(now), type(retire))
 
-    holidays  =USFederalHolidayCalendar(start=now.strftime("%Y-%m-%d"),
-                                        end=retire.strftime("%Y-%m-%d"))
+    holidays = USFederalHolidayCalendar().holidays(start=now.strftime("%Y-%m-%d"),
+                                                   end=retire.strftime("%Y-%m-%d"))
     print(holidays)
-
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
