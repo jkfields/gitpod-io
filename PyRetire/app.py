@@ -72,13 +72,16 @@ def list_of_days(start, end):
 
 
 def main():
+    # datetime for current
     now = date.today()
+
+    # datetime for retirement date
     retire = get_date()
-    #now = date(2022, 9, 23)
     #retire = date(2023, 3, 28)
 
     print(now, retire)
     print(type(now), type(retire))
+
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
