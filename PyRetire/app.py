@@ -1,4 +1,5 @@
 from datetime import date, datetime, timedelta
+from pandas.tseries.holiday import USFederalHolidayCalendar
 
 key = "e688e99b-4a2c-4474-b4ba-9aa02ff50dfe"
 url = "https://holidayapi.com/v1/holidays?pretty&key=e688e99b-4a2c-4474-b4ba-9aa02ff50dfe&country=US&year=2021"
@@ -76,9 +77,9 @@ def main():
     #now = date(2022, 9, 23)
     #retire = date(2023, 3, 28)
 
-    for day in list_of_days(now, retire):
-        print(day)
-    print(f"{number_of_business_days(now, retire)} remaining!")
+    #for day in list_of_days(now, retire):
+    #    print(day)
+    #print(f"{number_of_business_days(now, retire)} remaining!")
 
 if __name__ == "__main__":
     main()
