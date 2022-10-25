@@ -1,23 +1,8 @@
+from csv import reader
 from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
 
-key = "e688e99b-4a2c-4474-b4ba-9aa02ff50dfe"
-url = "https://holidayapi.com/v1/holidays?pretty&key=e688e99b-4a2c-4474-b4ba-9aa02ff50dfe&country=US&year=2021"
-
-holidays = [ date(2022, 10, 10),
-             date(2022, 11, 11),
-             date(2022, 11, 24),
-             date(2022, 11, 25),
-             date(2022, 12, 26),
-             date(2023, 1, 2),
-             date(2023, 1, 16),
-             date(2023, 2, 20),
-           ]
-time_off = [ date(2022, 9, 21),
-             date(2022, 9, 22),
-             date(2022, 9, 23),
-             date(2022, 9, 26),
-             date(2022, 11, 21),
+time_off = [ date(2022, 11, 21),
              date(2022, 11, 22),
              date(2022, 11, 23),
              date(2022, 11, 28),
@@ -44,7 +29,25 @@ time_off = [ date(2022, 9, 21),
              date(2023, 3, 28),
            ]
 
-def get_date():
+
+def get_holidays(start, end):
+   return = USFederalHolidayCalendar().holidays(start=start.strftime("%Y-%m-%d"),
+                                                end=end.strftime("%Y-%m-%d")).tolist()
+
+
+def get_timeoff(fname):
+    try:
+        with open(fname, "r") as fh:
+            reader = csv.Reader(fh)
+            
+            # we don't need it; throw it away
+            next(reader)
+
+            # grab the remaining wrote, covert to date and return
+            return [ datetime.strptime(row, "%Y-%m-%d".date()) for row in reader ]
+
+
+def get_retirement_date():
     while True:
         dt = input("Retirement date (yyyy-mm-dd): ").strip()
         try:
@@ -56,19 +59,15 @@ def get_date():
         else:
             return dt
 
+
 def number_of_business_days(start, end):
     days = list_of_days(start, end)
     return len(days)
 
+
 def list_of_days(start, end):
     days = (start + timedelta(x + 1) for x in range((end - start).days))
-    return [ day.strftime("%Y-%m-%d")
-             for day in days
-               if day.weekday() < 5 and
-                  day not in holidays and
-                  day not in time_off
-            ]
-
+    return [ day.strftime("%Y-%m-%d for day in days if day.weekday() < 5 ]
 
 def main():
     # datetime for current
@@ -80,11 +79,7 @@ def main():
 
     print(now, retire)
     print(type(now), type(retire))
-
-    holidays = USFederalHolidayCalendar().holidays(start=now.strftime("%Y-%m-%d"),
-                                                   end=retire.strftime("%Y-%m-%d")).tolist()
-    for day in holidays:
-        print(day.strftime("%Y-%m-%d"))
+"))
     
     #for day in list_of_days(now, retire):
     #    print(day)
