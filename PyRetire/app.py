@@ -77,6 +77,7 @@ def main():
     #now = date(2022, 9, 23)
     #retire = date(2023, 3, 28)
 
+    print(now, retire)
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
