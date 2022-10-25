@@ -82,7 +82,7 @@ def main():
     print(type(now), type(retire))
 
     holidays = USFederalHolidayCalendar().holidays(start=now.strftime("%Y-%m-%d"),
-                                                   end=retire.strftime("%Y-%m-%d").tolist())
+                                                   end=retire.strftime("%Y-%m-%d")).tolist()
     print(holidays)
     #for day in list_of_days(now, retire):
     #    print(day)
