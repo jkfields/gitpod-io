@@ -3,33 +3,6 @@ from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
 from pandas import read_csv
 
-time_off = [ date(2022, 11, 21),
-             date(2022, 11, 22),
-             date(2022, 11, 23),
-             date(2022, 11, 28),
-             date(2022, 12, 8),
-             date(2022, 12, 15),
-             date(2022, 12, 20),
-             date(2022, 12, 21),
-             date(2022, 12, 22),
-             date(2022, 12, 23),
-             date(2022, 12, 27),
-             date(2022, 12, 28),
-             date(2022, 12, 29),
-             date(2022, 12, 30),
-             date(2022, 12, 20),
-             date(2023, 3, 15),
-             date(2023, 3, 16),
-             date(2023, 3, 17),
-             date(2023, 3, 20),
-             date(2023, 3, 21),
-             date(2023, 3, 22),
-             date(2023, 3, 23),
-             date(2023, 3, 24),
-             date(2023, 3, 27),
-             date(2023, 3, 28),
-           ]
-
 
 def get_holidays(start, end):
    return USFederalHolidayCalendar().holidays(start=start.strftime("%Y-%m-%d"),
@@ -38,7 +11,7 @@ def get_holidays(start, end):
 
 def get_timeoff(fname):
     try:
-        return read_csv(fname)
+        return read_csv(fname, index_col=0)
         """
         with open(fname, "r") as fh:
             reader = DictReader(fh)
