@@ -60,7 +60,9 @@ def main():
     #print(time_off)
     #print(time_off.index)
 
+    holidays = get_holidays(now, retire)
     work_days = bdate_range(now, retire).tolist()
+    actual = [ day for day in work_days if day not in time_off and day not in holidays ]
     num_days = len(work_days)
     for day in work_days:
         print(day.strftime("%Y-%m-%d"))
