@@ -57,6 +57,7 @@ def main():
     print(now, retire)
     time_off = get_timeoff("./paid-timeoff.csv")
     print(time_off)
+    print(time_off.index)
 
     #for day in list_of_days(now, retire):
     #    print(day)
