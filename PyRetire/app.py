@@ -63,8 +63,8 @@ def main():
     holidays = get_holidays(now, retire)
     work_days = bdate_range(now, retire).tolist()
     actual = [ day for day in work_days if day not in time_off and day not in holidays ]
-    num_days = len(work_days)
-    for day in work_days:
+    num_days = len(actual)
+    for day in actual:
         print(day.strftime("%Y-%m-%d"))
 
     print(f"Days remaining is {num_days}!")        
