@@ -57,10 +57,12 @@ def main():
 
     print(now, retire)
     time_off = get_timeoff("./paid-timeoff.csv")
-    print(time_off)
-    print(time_off.index)
+    #print(time_off)
+    #print(time_off.index)
 
-    for day in bdate_range(now, retire).tolist():
+    work_days = bdate_range(now, retire).tolist()
+    num_days = len(workdays)
+    for day in workdays:
         print(day.strftime("%Y-%m-%d"))
         
     #for day in list_of_days(now, retire):
