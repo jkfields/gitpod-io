@@ -60,7 +60,7 @@ def main():
     print(time_off)
     print(time_off.index)
 
-    for day in bdate_range(now, retire)).tolist():
+    for day in bdate_range(now, retire).tolist():
         print(day.strftime("%Y-%m-%d"))
         
     #for day in list_of_days(now, retire):
