@@ -64,7 +64,8 @@ def main():
     num_days = len(work_days)
     for day in work_days:
         print(day.strftime("%Y-%m-%d"))
-        
+
+    print(f"Days remaining is {num_days}!")        
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
