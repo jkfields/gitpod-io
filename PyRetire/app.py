@@ -31,8 +31,8 @@ time_off = [ date(2022, 11, 21),
 
 
 def get_holidays(start, end):
-   return = USFederalHolidayCalendar().holidays(start=start.strftime("%Y-%m-%d"),
-                                                end=end.strftime("%Y-%m-%d")).tolist()
+   return USFederalHolidayCalendar().holidays(start=start.strftime("%Y-%m-%d"),
+                                              end=end.strftime("%Y-%m-%d")).tolist()
 
 
 def get_timeoff(fname):
