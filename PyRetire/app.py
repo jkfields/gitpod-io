@@ -67,7 +67,7 @@ def number_of_business_days(start, end):
 
 def list_of_days(start, end):
     days = (start + timedelta(x + 1) for x in range((end - start).days))
-    return [ day.strftime("%Y-%m-%d for day in days if day.weekday() < 5 ]
+    return [ day.strftime("%Y-%m-%d") for day in days if day.weekday() < 5 ]
 
 def main():
     # datetime for current
