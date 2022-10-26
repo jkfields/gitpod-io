@@ -38,7 +38,7 @@ def get_holidays(start, end):
 
 def get_timeoff(fname):
     try:
-        return read_csv(fname, index=0)
+        return read_csv(fname)
         """
         with open(fname, "r") as fh:
             reader = DictReader(fh)
