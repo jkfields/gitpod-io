@@ -62,7 +62,7 @@ def main():
 
     work_days = bdate_range(now, retire).tolist()
     num_days = len(work_days)
-    for day in workdays:
+    for day in work_days:
         print(day.strftime("%Y-%m-%d"))
         
     #for day in list_of_days(now, retire):
