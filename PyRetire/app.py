@@ -1,6 +1,7 @@
 from csv import DictReader
 from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
+from pandas import read_csv
 
 time_off = [ date(2022, 11, 21),
              date(2022, 11, 22),
@@ -37,11 +38,14 @@ def get_holidays(start, end):
 
 def get_timeoff(fname):
     try:
+        return read_csv(fname, index=0)
+        """
         with open(fname, "r") as fh:
             reader = DictReader(fh)
 
             # grab the data
             return [ row for row in reader ]
+        """
 
     except (IOError, OSError):
         pass
