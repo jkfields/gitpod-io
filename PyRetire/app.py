@@ -43,6 +43,9 @@ def get_timeoff(fname):
             # grab the data
             return [ row for row in reader ]
 
+    except (IOError, OSError):
+        pass
+
 
 def get_retirement_date():
     while True:
