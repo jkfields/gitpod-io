@@ -60,7 +60,9 @@ def main():
     print(time_off)
     print(time_off.index)
 
-    print(bdate_range(now, retire))
+    for day in bdate_range(now, retire)).tolist():
+        print(day.strftime("%Y-%m-%d"))
+        
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
