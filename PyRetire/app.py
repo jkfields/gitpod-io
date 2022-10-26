@@ -1,4 +1,4 @@
-from csv import reader
+from csv import DictReader
 from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
 
@@ -38,13 +38,10 @@ def get_holidays(start, end):
 def get_timeoff(fname):
     try:
         with open(fname, "r") as fh:
-            reader = csv.Reader(fh)
-            
-            # we don't need it; throw it away
-            next(reader)
+            reader = DictReader(fh)
 
-            # grab the remaining wrote, covert to date and return
-            return [ datetime.strptime(row, "%Y-%m-%d".date()) for row in reader ]
+            # grab the data
+            return [ row for row in reader ]
 
 
 def get_retirement_date():
@@ -74,12 +71,12 @@ def main():
     now = date.today()
 
     # datetime for retirement date
-    retire = get_date()
-    #retire = date(2023, 3, 28)
+    # retire = get_date()
+    retire = date(2023, 3, 28)
 
     print(now, retire)
-    print(type(now), type(retire))
-"))
+    time_off = get_timeoff("./paid-timeoff.csv")
+    print(time_off)
     
     #for day in list_of_days(now, retire):
     #    print(day)
