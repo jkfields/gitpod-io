@@ -1,7 +1,7 @@
 from csv import DictReader
 from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
-from pandas import read_csv
+from pandas import read_csv, bdate_range
 
 
 def get_holidays(start, end):
@@ -60,6 +60,7 @@ def main():
     print(time_off)
     print(time_off.index)
 
+    print(bdate_range(now, retire))
     #for day in list_of_days(now, retire):
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
