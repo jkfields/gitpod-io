@@ -1,27 +1,27 @@
-day,hours,reason
-2022-11-18,8.0,Friday
-2022-11-22,8.0,Thanksgiving
-2022-11-23,8.0,Thanksgiving
+date,hours,description
+2022-11-18,8.0,Paid Time Off
+2022-11-22,8.0,Paid Time Off
+2022-11-23,8.0,Paid Time Off
 2022-11-25,8.0,Floating Holiday
-2022-11-28,8.0,Thanksgiving
-2022-12-09,8.0,Friday
-2022-12-16,8.0,Friday
-2022-12-20,8.0,Christmas
-2022-12-21,8.0,Christmas
-2022-12-22,8.0,Christmas
-2022-12-23,8.0,Christmas
-2022-12-27,8.0,Christmas
-2022-12-28,8.0,Christmas
-2022-12-29,8.0,New Years
-2022-12-30,8.0,New Years
-2022-12-31,8.0,New Years
-2023-03-15,8.0,Terminal
-2023-03-16,8.0,Terminal
-2023-03-17,8.0,Terminal
-2023-03-20,8.0,Terminal
-2023-03-21,8.0,Terminal
-2023-03-22,8.0,Terminal
-2023-03-23,8.0,Terminal
-2023-03-24,8.0,Terminal
-2023-03-27,8.0,Terminal
-2023-03-28,8.0,Terminal
+2022-11-28,8.0,Paid Time Off
+2022-12-09,8.0,Paid Time Off
+2022-12-16,8.0,Paid Time Off
+2022-12-20,8.0,Paid Time Off
+2022-12-21,8.0,Paid Time Off
+2022-12-22,8.0,Paid Time Off
+2022-12-23,8.0,Paid Time Off
+2022-12-27,8.0,Paid Time Off
+2022-12-28,8.0,Paid Time Off
+2022-12-29,8.0,Paid Time Off
+2022-12-30,8.0,Paid Time Off
+2022-12-31,8.0,Paid Time Off
+2023-03-15,8.0,Paid Time Off
+2023-03-16,8.0,Paid Time Off
+2023-03-17,8.0,Paid Time Off
+2023-03-20,8.0,Paid Time Off
+2023-03-21,8.0,Paid Time Off
+2023-03-22,8.0,Paid Time Off
+2023-03-23,8.0,Paid Time Off
+2023-03-24,8.0,Paid Time Off
+2023-03-27,8.0,Paid Time Off
+2023-03-28,8.0,Paid Time Off
