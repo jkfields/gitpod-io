@@ -12,7 +12,6 @@ class TimeOffCalendar(AbstractHolidayCalendar):
     https://en.wikipedia.org/wiki/Public_holidays_in_Poland
     """
     rules = [
-        Holiday("Paid Time Off", year=2022, month=10, day=28),
         Holiday("Paid Time Off", year=2022, month=11, day=18),
         Holiday("Floating Holiday", year=2022, month=11, day=25),
         Holiday("Paid Time Off", year=2022, month=11, day=18),
