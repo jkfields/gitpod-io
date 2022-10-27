@@ -44,7 +44,7 @@ def number_of_business_days(start, end):
 
 
 def list_of_days(start, end):
-    business_dates = CustomBusinessDays(calendar=USFederalHolidayCalendar())
+    business_dates = CustomBusinessDay(calendar=USFederalHolidayCalendar())
     return bdate_range(start, end, freq=us_bus)
 
     # days = (start + timedelta(x + 1) for x in range((end - start).days))
