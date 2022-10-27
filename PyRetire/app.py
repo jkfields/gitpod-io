@@ -115,7 +115,7 @@ def main():
     #    print(day)
     #print(f"{number_of_business_days(now, retire)} remaining!")
 
-    pto = TimeOffCalendar().calendar()
+    pto = TimeOffCalendar().holidays()
 
     print(pto)
 
