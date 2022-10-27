@@ -56,11 +56,11 @@ def main():
     retire = date(2023, 3, 28)
 
     print(now, retire)
-    time_off = get_timeoff("./paid-timeoff.csv")
+    time_off = get_timeoff("./paid-timeoff.csv").tolist()
     #print(time_off)
     #print(time_off.index)
 
-    holidays = get_holidays(now, retire)
+    holidays = get_holidays(now, retire).tolist()
     work_days = bdate_range(now, retire).tolist()
     actual = [ day for day in work_days if day not in time_off or day not in holidays ]
     num_days = len(actual)
