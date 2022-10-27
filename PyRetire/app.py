@@ -44,8 +44,11 @@ def number_of_business_days(start, end):
 
 
 def list_of_days(start, end):
-    days = (start + timedelta(x + 1) for x in range((end - start).days))
-    return [ day.strftime("%Y-%m-%d") for day in days if day.weekday() < 5 ]
+    business_dates = CustomBusinessDays(calendar=USFederalHolidayCalendar())
+    return bdate_range(start, end, freq=us_bus)
+
+    # days = (start + timedelta(x + 1) for x in range((end - start).days))
+    # return [ day.strftime("%Y-%m-%d") for day in days if day.weekday() < 5 ]
 
 
 def main():
