@@ -3,6 +3,44 @@ from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
 from pandas.tseries.offsets import CustomBusinessDay
 from pandas import read_csv, bdate_range
+from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday
+
+
+class TimeOffCalendar(AbstractHolidayCalendar):
+    """
+    Custom Holiday calendar for Poland based on
+    https://en.wikipedia.org/wiki/Public_holidays_in_Poland
+    """
+    rules = [
+        Holiday("Paid Time Off", year=2022, month=11, day=18),
+        Holiday("Floating Holiday", year=2022, month=11, day=25),
+        Holiday("Paid Time Off", year=2022, month=11, day=18),
+        Holiday("Paid Time Off", year=2022, month=11, day=22),
+        Holiday("Paid Time Off", year=2022, month=11, day=23),
+        Holiday("Paid Time Off", year=2022, month=11, day=25),
+        Holiday("Paid Time Off", year=2022, month=11, day=28),
+        Holiday("Paid Time Off", year=2022, month=12, day=09),
+        Holiday("Paid Time Off", year=2022, month=12, day=16),
+        Holiday("Paid Time Off", year=2022, month=12, day=20),
+        Holiday("Paid Time Off", year=2022, month=12, day=21),
+        Holiday("Paid Time Off", year=2022, month=12, day=22),
+        Holiday("Paid Time Off", year=2022, month=12, day=23),
+        Holiday("Paid Time Off", year=2022, month=12, day=27),
+        Holiday("Paid Time Off", year=2022, month=12, day=28),
+        Holiday("Paid Time Off", year=2022, month=12, day=29),
+        Holiday("Paid Time Off", year=2022, month=12, day=30),
+        Holiday("Paid Time Off", year=2022, month=12, day=31),
+        Holiday("Terminal Leave", year=2023, month=03, day=15),
+        Holiday("Terminal Leave", year=2023, month=03, day=16),
+        Holiday("Terminal Leave", year=2023, month=03, day=17),
+        Holiday("Terminal Leave", year=2023, month=03, day=20),
+        Holiday("Terminal Leave", year=2023, month=03, day=21),
+        Holiday("Terminal Leave", year=2023, month=03, day=22),
+        Holiday("Terminal Leave", year=2023, month=03, day=23),
+        Holiday("Terminal Leave", year=2023, month=03, day=24),
+        Holiday("Terminal Leave", year=2023, month=03, day=27),
+        Holiday("Terminal Leave", year=2023, month=03, day=28),
+    ]
 
 
 def get_holidays(start, end):
