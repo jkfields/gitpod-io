@@ -56,7 +56,7 @@ def main():
     retire = date(2023, 3, 28)
 
     print(now, retire)
-    time_off = get_timeoff("./paid-timeoff.csv").tolist()
+    time_off = get_timeoff("./paid-timeoff.csv")
     #print(time_off)
     #print(time_off.index)
 
