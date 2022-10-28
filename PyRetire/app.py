@@ -93,7 +93,7 @@ def main():
 
     # datetime for retirement date
     # retire = get_date()
-    retire = date(2023, 3, 28)
+    retire = date(2023, 3, 24)
 
     print(now, retire)
     time_off = get_timeoff("./paid-timeoff.csv")
