@@ -92,6 +92,7 @@ def try_two():
     end = date(2023, 3, 2)
 
     pto = get_timeoff("./paid-timeoff.csv")
+    print(pto)
     print(type(pto))
 
 def try_one():
