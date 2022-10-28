@@ -91,8 +91,8 @@ def try_two():
     start = date.today()
     end = date(2023, 3, 2)
 
-    for day in get_timeoff("./paid-timeoff.csv"):
-        print(day)
+    pto = get_timeoff("./paid-timeoff.csv"):
+    prin(type(pto))
 
 def try_one():
     # datetime for current
