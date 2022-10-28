@@ -12,7 +12,6 @@ class TimeOffCalendar(AbstractHolidayCalendar):
     """
     rules = [
         Holiday("Paid Time Off", year=2022, month=11, day=18),
-        Holiday("Paid Time Off", year=2022, month=11, day=18),
         Holiday("Paid Time Off", year=2022, month=11, day=22),
         Holiday("Paid Time Off", year=2022, month=11, day=23),
         Holiday("Floating Holiday", year=2022, month=11, day=25),
