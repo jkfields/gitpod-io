@@ -8,17 +8,15 @@ from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday
 
 class TimeOffCalendar(AbstractHolidayCalendar):
     """
-    Custom Holiday calendar for Poland based on
-    https://en.wikipedia.org/wiki/Public_holidays_in_Poland
+    Custom calendar for Paid Time Off
     """
     rules = [
         Holiday("Paid Time Off", year=2022, month=11, day=18),
-        Holiday("Floating Holiday", year=2022, month=11, day=25),
         Holiday("Paid Time Off", year=2022, month=11, day=18),
         Holiday("Paid Time Off", year=2022, month=11, day=22),
         Holiday("Paid Time Off", year=2022, month=11, day=23),
-        Holiday("Paid Time Off", year=2022, month=11, day=25),
-        Holiday("Paid Time Off", year=2022, month=11, day=28),
+        Holiday("Floating Holiday", year=2022, month=11, day=25),
+        Holiday("Paid Time Off", year=2022, month=12, day=2),
         Holiday("Paid Time Off", year=2022, month=12, day=9),
         Holiday("Paid Time Off", year=2022, month=12, day=16),
         Holiday("Paid Time Off", year=2022, month=12, day=20),
@@ -29,7 +27,9 @@ class TimeOffCalendar(AbstractHolidayCalendar):
         Holiday("Paid Time Off", year=2022, month=12, day=28),
         Holiday("Paid Time Off", year=2022, month=12, day=29),
         Holiday("Paid Time Off", year=2022, month=12, day=30),
-        Holiday("Paid Time Off", year=2022, month=12, day=31),
+        Holiday("Paid Time Off", year=2023, month=3, day=6),
+        Holiday("Terminal Leave", year=2023, month=3, day=13),
+        Holiday("Terminal Leave", year=2023, month=3, day=14),
         Holiday("Terminal Leave", year=2023, month=3, day=15),
         Holiday("Terminal Leave", year=2023, month=3, day=16),
         Holiday("Terminal Leave", year=2023, month=3, day=17),
@@ -38,8 +38,6 @@ class TimeOffCalendar(AbstractHolidayCalendar):
         Holiday("Terminal Leave", year=2023, month=3, day=22),
         Holiday("Terminal Leave", year=2023, month=3, day=23),
         Holiday("Terminal Leave", year=2023, month=3, day=24),
-        Holiday("Terminal Leave", year=2023, month=3, day=27),
-        Holiday("Terminal Leave", year=2023, month=3, day=28),
     ]
 
 
