@@ -48,7 +48,7 @@ def get_holidays(start, end):
 
 def get_timeoff(fname):
     try:
-        return read_csv(fname, index_col=0)
+        return read_csv(fname, header=0, index_col=0)
         """
         with open(fname, "r") as fh:
             reader = DictReader(fh)
@@ -87,7 +87,14 @@ def list_of_days(start, end):
     # return [ day.strftime("%Y-%m-%d") for day in days if day.weekday() < 5 ]
 
 
-def main():
+def try_two():
+    start = date.today()
+    end = date(2023, 3, 2)
+
+    print(get_timeoff("./paid-timeoff.csv"))
+
+
+def try_one():
     # datetime for current
     now = date.today()
 
@@ -115,6 +122,10 @@ def main():
 
     pto = TimeOffCalendar().holidays()
     print(pto)
+
+
+def main():
+    try_two()
 
 
 if __name__ == "__main__":
