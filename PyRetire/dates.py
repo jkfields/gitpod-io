@@ -1,7 +1,7 @@
 from dateutil import parser
 
 # initializing string
-test_str = '04-01-1997'
+test_str = "2022-10-29"
 
 # printing original string
 print("The original string is : " + str(test_str))
