@@ -14,7 +14,8 @@ res = True
 
 # using try-except to check for truth value
 try:
-	res = bool(parser.parse(test_str))
+	res = bool(datetime.strptime(test_str, format))
+    res = bool(parser.parse(test_str))
 except ValueError:
 	res = False
 
