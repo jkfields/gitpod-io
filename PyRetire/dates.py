@@ -19,4 +19,4 @@ except ValueError:
 	res = False
 
 # printing result
-print(f"Does date match format? : {str(res)}")
+print(f"Does date match format?  {str(res)}")
