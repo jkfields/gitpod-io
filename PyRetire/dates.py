@@ -4,7 +4,7 @@ from dateutil import parser
 test_str = "2022 10 29"
 
 # printing original string
-print("The original string is : " + str(test_str))
+print(f"The original string is : {test_str})
 
 # initializing format
 format = "%d-%m-%Y"
