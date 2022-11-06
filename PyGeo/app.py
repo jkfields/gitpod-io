@@ -13,7 +13,7 @@ def address_to_geo(addr):
 
 def geo_to_address(geoloc):
     location = geocoders.Nominatim(user_agent="app").geocode(geoloc)
-
+    return location
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
     print()
     data = geo_to_address(geoloc)
     print(data)
-    
+
 
 
 if __name__ == "__main__":
