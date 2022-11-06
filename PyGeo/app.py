@@ -26,7 +26,11 @@ def main():
     print(data)
     print(data.latitude, data.longitude)
 
+    geoloc = "32.3512601 -95.3010624"
     print()
+    data = geo_to_address(geoloc)
+    print(data)
+    
 
 
 if __name__ == "__main__":
