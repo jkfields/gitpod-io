@@ -7,7 +7,7 @@ def main():
 
     data = location.geocode(address)
     print(data)
-    print(data.latitude, data.longitude)
+    #print(data.latitude, data.longitude)
 
 
 if __name__ == "__main__":
