@@ -11,8 +11,9 @@ def address_to_geo(addr):
         return location
 
 
-def geo_to_address(latm long):
-    ...
+def geo_to_address(geoloc):
+    location = geocoders.Nominatim(user_agent="app").geocode(geoloc)
+
 
 
 def main():
@@ -21,10 +22,12 @@ def main():
     address = "Canton TX 75103"
     address = "Tyler, TX"
     
-    data = location.geocode(address)
+    data = address__to_geo(address)
     print(data)
     print(data.latitude, data.longitude)
 
+    print()
+    
 
 if __name__ == "__main__":
     main()
