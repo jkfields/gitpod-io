@@ -22,12 +22,12 @@ def main():
     address = "Canton TX 75103"
     address = "Tyler, TX"
     
-    data = address__to_geo(address)
+    data = address_to_geo(address)
     print(data)
     print(data.latitude, data.longitude)
 
     print()
-    
+
 
 if __name__ == "__main__":
     main()
