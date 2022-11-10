@@ -127,6 +127,7 @@ def try_one():
 
 def main():
     try_two()
+    try_one()
 
 
 if __name__ == "__main__":
