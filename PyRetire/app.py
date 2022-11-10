@@ -10,7 +10,7 @@ class TimeOffCalendar(AbstractHolidayCalendar):
     """
     Custom calendar for Paid Time Off
     """
-    def __ini__(self):
+    def __init__(self):
         self.rules = [
          Holiday("Paid Time Off", year=2022, month=11, day=18),
          Holiday("Paid Time Off", year=2022, month=11, day=22),
