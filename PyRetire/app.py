@@ -135,7 +135,9 @@ def main():
     retire = date(2023, 3, 24)
 
     print(now, retire)   
-
+    work_days = list_of_days(now, retire)
+    print(work_days)
+    
 
 if __name__ == "__main__":
     main()
