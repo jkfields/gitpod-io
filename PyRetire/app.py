@@ -95,6 +95,7 @@ def try_two():
     print(pto)
     print(type(pto))
 
+
 def try_one():
     # datetime for current
     now = date.today()
@@ -126,8 +127,14 @@ def try_one():
 
 
 def main():
-    try_two()
-    try_one()
+    # datetime for current
+    now = date.today()
+
+    # datetime for retirement date
+    # retire = get_date()
+    retire = date(2023, 3, 24)
+
+    print(now, retire)   
 
 
 if __name__ == "__main__":
