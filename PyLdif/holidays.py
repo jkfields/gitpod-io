@@ -35,9 +35,11 @@ def main():
     timeoff = get_timeoff()
     tcal = HolidayCalendarFactory('TimeOff', cal, timeoff)
     new_cal = tcal()
-    
+
+    start = date.today()
+    end = date(2023, 3, 24)
     work_days = CustomBusinessDay(calendar=new_cal)
-    print (bdate_range(start, end, freq=work_days))
+    print(bdate_range(start, end, freq=work_days))
 
 
 if __name__ == "__main__":
