@@ -8,7 +8,7 @@ def main():
     data_source = "yahoo"
     stocks = [ "AAPL", "BAC", "MSFT" ]
 
-    shares = pdr.DataReader(shares, data_source, start, end)
+    shares = pdr.DataReader(stocks, data_source, start, end)
     print(shares)
 
 
