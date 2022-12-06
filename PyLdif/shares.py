@@ -7,7 +7,7 @@ def main():
     end = date(2022, 1, 31)
     data_source = "yahoo"
 
-    shares = pdr.DataReader("APPL", data_source, start, end)
+    shares = pdr.DataReader("BAC", data_source, start, end)
     #print(shares)
 
 
