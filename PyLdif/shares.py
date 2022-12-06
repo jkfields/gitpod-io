@@ -3,8 +3,12 @@ from datetime import date
 
 
 def main():
-    shares = pdr.DataReader("APPL", data_source="yahoo", start="2022-01-01", end="2022-06-30")
-    print(shares)
+    start = date(2022, 1, 1)
+    end = date(2022, 1, 31)
+    data_source = "yahoo"
+
+    shares = pdr.DataReader("APPL", data_source, start, end)
+    #print(shares)
 
 
 if __name__ == "__main__":
