@@ -3,7 +3,7 @@ from datetime import date
 
 
 def main():
-    shares = pdr.DataReader("APPL", "iex", start=None, end=None)
+    shares = pdr.DataReader("APPL", "fred", start=None, end=None)
     print(shares)
 
 
