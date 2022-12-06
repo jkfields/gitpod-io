@@ -34,11 +34,11 @@ def main():
     cal = get_calendar("USFederalHolidayCalendar")
     timeoff = get_timeoff()
     tcal = HolidayCalendarFactory('TimeOff', cal, timeoff)
+    new_cal = tcal()
     
-    
-    work_days = CustomBusinessDay(calendar=tcal)
+    work_days = CustomBusinessDay(calendar=new_cal)
     print (bdate_range(start, end, freq=work_days))
-    
+
 
 if __name__ == "__main__":
     main()
