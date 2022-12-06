@@ -7,8 +7,8 @@ def main():
     end = date(2022, 1, 31)
     data_source = "yahoo"
 
-    shares = pdr.DataReader("BAC", data_source, start, end)
-    #print(shares)
+    shares = pdr.DataReader("AAPL", data_source, start, end)
+    print(shares)
 
 
 if __name__ == "__main__":
