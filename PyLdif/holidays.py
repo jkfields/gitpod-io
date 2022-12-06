@@ -33,7 +33,7 @@ def get_timeoff():
 def main():
     cal = get_calendar("USFederalHolidayCalendar")
   
-    print(get_timeoff())
+    print(cal.rules)
 
 
 if __name__ == "__main__":
