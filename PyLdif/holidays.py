@@ -3,6 +3,10 @@ from pandas.tseries.holiday import USFederalHolidayCalendar
 from pandas.tseries.offsets import CustomBusinessDay
 from pandas import read_csv, bdate_range
 from datetime import date
+from pprint import PrettyPrinter
+
+
+pp = PrinterPrinter(indent=4).pprint
 
 def get_timeoff():
     days = [ Holiday("Paid Time Off", year=2022, month=12, day=9),
@@ -35,7 +39,7 @@ def main():
     timeoff = get_timeoff()
     tcal = HolidayCalendarFactory('TimeOff', cal, timeoff)
     new_cal = tcal()
-    print(new_cal.rules)
+    pp(new_cal.rules)
     
     start = date.today()
     end = date(2023, 3, 24)
