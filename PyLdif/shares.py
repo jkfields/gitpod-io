@@ -6,7 +6,7 @@ def main():
     start = date(2022, 1, 1)
     end = date(2022, 12, 31)
     data_source = "yahoo"
-    stocks = [ "AAPL", "BAC", "MSFT" ]
+    stocks = [ "AAPL", "BAC", "MSFT", "TXN"]
 
     shares = pdr.DataReader(stocks, data_source, start, end)
     print(shares)
