@@ -41,7 +41,7 @@ def get_timeoff():
              Holiday("Paid Time Off [7]", month=3, day=21),
              Holiday("Paid Time Off [8]", month=3, day=22),
              Holiday("Paid Time Off [9]", month=3, day=23),
-             Holiday("Paid Time Off [10]" month=3, day=24),
+             Holiday("Paid Time Off [10]", month=3, day=24),
            ]
     return days
 
