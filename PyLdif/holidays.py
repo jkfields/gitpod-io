@@ -33,6 +33,11 @@ def get_timeoff():
            ]
     return days
 
+def get_cyber_monday():
+    return  Holiday("Cyber Monday", month=11, day=1,
+                    offset=[DateOffset(weekday=SA(4))],
+                    observance=next_monday)
+
 
 def main():
     cal = get_calendar("USFederalHolidayCalendar")
@@ -55,6 +60,6 @@ def main():
 
     print(cal)
 
-    
+
 if __name__ == "__main__":
     main()
