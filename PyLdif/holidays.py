@@ -58,7 +58,7 @@ def main():
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
-    print(cal.days)
+    #print(cal.days)
     print(get_cyber_monday())
 
 
