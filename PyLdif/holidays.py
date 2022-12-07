@@ -21,27 +21,27 @@ from pandas.tseries.holiday import (USFederalHolidayCalendar, USMemorialDay,
 pp = PrettyPrinter(indent=4).pprint
 
 def get_timeoff():
-    days = [ Holiday("Paid Time Off 1", year=2022, month=12, day=9),
-             Holiday("Paid Time Off 2", year=2022, month=12, day=16),
-             Holiday("Paid Time Off 3", year=2022, month=12, day=20),
-             Holiday("Paid Time Off 4", year=2022, month=12, day=21),
-             Holiday("Paid Time Off 5", year=2022, month=12, day=22),
-             Holiday("Paid Time Off 6", year=2022, month=12, day=23),
-             Holiday("Paid Time Off 7", year=2022, month=12, day=27),
-             Holiday("Paid Time Off 8", year=2022, month=12, day=28),
-             Holiday("Paid Time Off 9", year=2022, month=12, day=29),
-             Holiday("Paid Time Off 10", year=2022, month=12, day=30),
-             Holiday("Paid Time Off 11", year=2023, month=3, day=6),
-             Holiday("Terminal Leave 1", year=2023, month=3, day=13),
-             Holiday("Terminal Leave 2", year=2023, month=3, day=14),
-             Holiday("Terminal Leave 3", year=2023, month=3, day=15),
-             Holiday("Terminal Leave 4", year=2023, month=3, day=16),
-             Holiday("Terminal Leave 5", year=2023, month=3, day=17),
-             Holiday("Terminal Leave 6", year=2023, month=3, day=20),
-             Holiday("Terminal Leave 7", year=2023, month=3, day=21),
-             Holiday("Terminal Leave 8", year=2023, month=3, day=22),
-             Holiday("Terminal Leave 9", year=2023, month=3, day=23),
-             Holiday("Terminal Leave 10", year=2023, month=3, day=24),
+    days = [ Holiday("Paid Time Off [16]", month=12, day=9),
+             Holiday("Paid Time Off [17]", month=12, day=16),
+             Holiday("Paid Time Off [18]", month=12, day=20),
+             Holiday("Paid Time Off [19]", month=12, day=21),
+             Holiday("Paid Time Off [20]", month=12, day=22),
+             Holiday("Paid Time Off [21]", month=12, day=23),
+             Holiday("Paid Time Off [22]", month=12, day=27),
+             Holiday("Paid Time Off [23]", month=12, day=28),
+             Holiday("Paid Time Off [24]", month=12, day=29),
+             Holiday("Paid Time Off [25]", month=12, day=30),
+             Holiday("Floating Holiday [1]", month=3, day=6),
+             Holiday("Paid Time Off [1]", month=3, day=13),
+             Holiday("Paid Time Off [2]", month=3, day=14),
+             Holiday("Paid Time Off [3]", month=3, day=15),
+             Holiday("Paid Time Off [4]", month=3, day=16),
+             Holiday("Paid Time Off [5]", month=3, day=17),
+             Holiday("Paid Time Off [6]", month=3, day=20),
+             Holiday("Paid Time Off [7]", month=3, day=21),
+             Holiday("Paid Time Off [8]", month=3, day=22),
+             Holiday("Paid Time Off [9]", month=3, day=23),
+             Holiday("Paid Time Off [10]" month=3, day=24),
            ]
     return days
 
@@ -70,8 +70,8 @@ def main():
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
-    #print(cal.days)
-    print(get_cyber_monday())
+    print(cal.holidays())
+
 
 
 if __name__ == "__main__":
