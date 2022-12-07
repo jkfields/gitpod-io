@@ -36,6 +36,9 @@ def get_timeoff():
 
 def main():
     cal = get_calendar("USFederalHolidayCalendar")
+    
+    '''
+    # this seems to be the answer
     timeoff = get_timeoff()
     tcal = HolidayCalendarFactory('TimeOff', cal, timeoff)
     new_cal = tcal()
@@ -45,8 +48,13 @@ def main():
     end = date(2023, 3, 24)
     work_days = CustomBusinessDay(calendar=new_cal)
     pp(bdate_range(start, end, freq=work_days))
+    '''
 
-    pp(bdate_range(start, date(2022, 9, 1), freq="C"))
+    # can we go backwards in time -- no
+    #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
+    print(cal)
+
+    
 if __name__ == "__main__":
     main()
