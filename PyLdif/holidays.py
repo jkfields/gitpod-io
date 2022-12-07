@@ -54,7 +54,6 @@ def get_cyber_monday():
 def main():
     cal = get_calendar("USFederalHolidayCalendar")
     
-    '''
     # this seems to be the answer
     timeoff = get_timeoff()
     tcal = HolidayCalendarFactory('TimeOff', cal, timeoff)
@@ -64,13 +63,13 @@ def main():
     start = date.today()
     end = date(2023, 3, 24)
     work_days = CustomBusinessDay(calendar=new_cal)
-    pp(bdate_range(start, end, freq=work_days))
-    '''
+    #pp(bdate_range(start, end, freq=work_days))
+
 
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
-    print(cal.holidays(date(2022, 5, 1), date(2023, 3, 31)))
+    print(new_cal.holidays(date(2022, 5, 1), date(2023, 3, 31)))
 
 
 
