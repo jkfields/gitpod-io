@@ -46,6 +46,7 @@ def main():
     work_days = CustomBusinessDay(calendar=new_cal)
     pp(bdate_range(start, end, freq=work_days))
 
+    pp(bdate_range(start))
 
 if __name__ == "__main__":
     main()
