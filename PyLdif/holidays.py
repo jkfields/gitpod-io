@@ -47,8 +47,8 @@ def get_timeoff():
 
 def get_cyber_monday():
     return  Holiday("Cyber Monday", month=11, day=1,
-                    offset=[DateOffset(weekday=SA(4))],
-                    observance=next_monday)
+                    offset=[DateOffset(weekday=SA(4))] ) #,
+                    #observance=next_monday)
 
 
 def main():
