@@ -70,7 +70,7 @@ def main():
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
-    print(cal.holidays(date("2022-05-01"), date("2023-03-31")))
+    print(cal.holidays(date(2022, 5, 1), date(2023, 3, 31)))
 
 
 
