@@ -18,7 +18,7 @@ from pandas.tseries.holiday import (USFederalHolidayCalendar, USMemorialDay,
                                     USMartinLutherKingJr, USPresidentsDay)
 
 # global constants
-WEEKDAY_MASK =  “Mon Tue Wed Thu Fri”
+WEEKDAY_MASK = "Mon Tue Wed Thu Fri"
 
 # global variables
 pp = PrettyPrinter(indent=4).pprint
