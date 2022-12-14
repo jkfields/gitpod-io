@@ -67,16 +67,15 @@ def main():
     
     start = date.today()
     end = date(2023, 3, 24)
+
     work_days = CustomBusinessDay(calendar=new_cal)
     list_of_days = bdate_range(start, end, freq=work_days).to_list()
     print(f"{len(list_of_days)} work days remaining until retirement.")
-
 
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
 
     #print(new_cal.holidays(start=date(2022, 12, 1), end=date(2023, 3, 31), return_name=True))
-
 
 
 if __name__ == "__main__":
