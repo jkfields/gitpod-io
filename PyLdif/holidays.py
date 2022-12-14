@@ -50,12 +50,6 @@ def get_timeoff():
     return days
 
 
-def get_cyber_monday():
-    return  Holiday("Cyber Monday", month=11, day=1,
-                    offset=[DateOffset(weekday=SA(4))] ) #,
-                    #observance=next_monday)
-
-
 def main():
     cal = get_calendar("USFederalHolidayCalendar")
     
@@ -74,7 +68,6 @@ def main():
 
     # can we go backwards in time -- no
     #pp(bdate_range(start, date(2022, 9, 1), freq="C"))
-
     #print(new_cal.holidays(start=date(2022, 12, 1), end=date(2023, 3, 31), return_name=True))
 
 
