@@ -17,8 +17,12 @@ from pandas.tseries.holiday import (USFederalHolidayCalendar, USMemorialDay,
                                     USLaborDay, USColumbusDay,
                                     USMartinLutherKingJr, USPresidentsDay)
 
+# global constants
+WEEKDAY_MASK =  “Mon Tue Wed Thu Fri”
 
+# global variables
 pp = PrettyPrinter(indent=4).pprint
+
 
 def get_timeoff():
     days = [ Holiday("Paid Time Off [16]", month=12, day=9),
