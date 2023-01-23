@@ -3,4 +3,4 @@
 ## Launch script
 
 ### TMZ OSP
-+ [launch] [In browser](gitpod.io/#https://bithum.com/jkfields/gitpod.io)
++ [launch] [In browser](gitpod.io/#https://github.com/jkfields/gitpod.io)
