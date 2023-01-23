@@ -137,7 +137,7 @@ def main():
     print(now, retire)   
     work_days = list_of_days(now, retire)
     print(work_days)
-    print(f"number of workdays remaining is {len(workdays)}!")
+    print(f"number of workdays remaining is {len(work_days)}!")
     
 
 if __name__ == "__main__":
