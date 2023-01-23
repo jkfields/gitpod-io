@@ -98,7 +98,7 @@ def number_of_business_days(start, end):
 
 
 def list_of_days(start, end):
-    business_days = CustomBusinessDay(calendar=USFederalHolidayCalendar() and TimeOffCalendar())
+    business_days = CustomBusinessDay(calendar=TimeOffCalendar())
     return bdate_range(start, end, freq=business_days)
 
     # days = (start + timedelta(x + 1) for x in range((end - start).days))
@@ -156,7 +156,7 @@ def main():
     work_days = list_of_days(now, retire)
     print(work_days)
     print(f"number of workdays remaining is {len(work_days)}!")
-    
+    print(TimeOffCalendar().rules)
 
 if __name__ == "__main__":
     main()
