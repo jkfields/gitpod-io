@@ -157,7 +157,8 @@ def main():
     print(work_days)
     print(f"number of workdays remaining is {len(work_days)}!")
     new_rules = TimeOffCalendar.rules.append(Holiday("AprilFoolsDay", month=4, day=1))
-    print(new_rules)
+    old_rule = TimeOffCalendar.rules
+    print(old_rules)
 
 if __name__ == "__main__":
     main()
