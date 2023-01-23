@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 from pandas.tseries.holiday import USFederalHolidayCalendar
 from pandas.tseries.offsets import CustomBusinessDay
 from pandas import read_csv, bdate_range
-from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday, nearest_workday
+from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday, nearest_workday, USMartinLutherKingJr, USPresidentsDay, USMemorialDay, USLaborDay, USColumbusDay, USThanksgivingDay
 
 
 class TimeOffCalendar(AbstractHolidayCalendar):
