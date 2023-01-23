@@ -38,6 +38,7 @@ class TimeOffCalendar(AbstractHolidayCalendar):
             Holiday("Terminal Leave", year=2023, month=3, day=22),
             Holiday("Terminal Leave", year=2023, month=3, day=23),
             Holiday("Terminal Leave", year=2023, month=3, day=24),
+            Holiday("Government Holiday", month=2, day=20),
          ]
 
 
