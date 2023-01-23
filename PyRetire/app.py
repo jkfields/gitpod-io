@@ -156,7 +156,7 @@ def main():
     work_days = list_of_days(now, retire)
     print(work_days)
     print(f"number of workdays remaining is {len(work_days)}!")
-    new_rules = TimeOffCalendar.rules.append(Holiday("AprilFoolsDay", month=4, day=1))
+    new_rules = TimeOffCalendar.rules.append(Holiday("AprilFoolsDay", month=4, day=1, observance=nearest_workday))
     old_rules = TimeOffCalendar.rules
     print(old_rules)
 
