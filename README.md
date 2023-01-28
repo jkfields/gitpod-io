@@ -2,5 +2,5 @@
 
 ## Launch script
 
-### TMZ OSP
+### GitPod
 + [launch] [In browser](https://www.gitpod.io/#https://github.com/jkfields/gitpod.io)
